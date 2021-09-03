@@ -12,4 +12,4 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # RUN composer install
 
 # Set working directory
-WORKDIR /var/www/api
+WORKDIR /var/www/web
