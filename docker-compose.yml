@@ -1,0 +1,51 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: desafio-tonolucro-nginx
+    volumes:
+      - ./api:/var/www/api
+      - ./web:/var/www/web
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - 8081:81
+      - 8082:82
+    networks:
+      - desafio-tonolucro
+  api:
+    build:
+      context: ./
+      dockerfile: api\Dockerfile
+    image: desafio-tonolucro-api
+    container_name: desafio-tonolucro-api
+    volumes:
+      - ./api:/var/www/api
+    # command: >
+    #   sh -c 'composer install && php artisan migrate'
+
+    networks:
+      - desafio-tonolucro
+  web:
+    build: web\.
+    image: desafio-tonolucro-web
+    container_name: desafio-tonolucro-web
+    volumes:
+      - ./web:/var/www/web
+    # command: >
+    #   sh -c 'composer install && php artisan migrate'
+
+    networks:
+      - desafio-tonolucro
+  mysql:
+    image: mysql
+    container_name:  desafio-tonolucro-mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: desafio_tonolucro
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+    networks:
+      - desafio-tonolucro
+networks:
+  desafio-tonolucro:
+    driver: bridge

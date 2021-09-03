@@ -1,0 +1,599 @@
+{
+	"info": {
+		"_postman_id": "a2784a62-dceb-4241-9e35-95ad0c92691d",
+		"name": "desafio_tonolucro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "autenticação",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_api}}login?email=seu.email@email.com&password=1234",
+							"host": [
+								"{{url_api}}login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "seu.email@email.com"
+								},
+								{
+									"key": "password",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_api}}register?name=Seu Nome&email=seu.email@email.com&password=1234",
+							"host": [
+								"{{url_api}}register"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Seu Nome"
+								},
+								{
+									"key": "email",
+									"value": "seu.email@email.com"
+								},
+								{
+									"key": "password",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_api}}me",
+							"host": [
+								"{{url_api}}me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "restaurante",
+			"item": [
+				{
+					"name": "listar_restaurantes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_api}}restaurante",
+							"host": [
+								"{{url_api}}restaurante"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar_restaurante",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Meu Restaurante -1\",\r\n    \"descricao\":\"O melhor da Tocantins\",\r\n  \r\n    \"endereco\": \"Rua da Imaginação Nº 001\",\r\n    \"cep\": \"77000000\",\r\n    \"cidade\": \"Palmas\",\r\n    \"estado\": \"TO\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}restaurante",
+							"host": [
+								"{{url_api}}restaurante"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar_restaurante",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Meu Restaurante\",\r\n    \"descricao\":\"O melhor do Mundo\",\r\n    \"telefone\": \"55555555555\",\r\n    \"endereco\": \"Rua da Imaginação Nº 001\",\r\n    \"cep\": \"77400000\",\r\n    \"cidade\": \"Palmas\",\r\n    \"estado\": \"TO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}restaurante/3",
+							"host": [
+								"{{url_api}}restaurante"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluir_restaurante",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_api}}restaurante/1",
+							"host": [
+								"{{url_api}}restaurante"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar_restaurante",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}restaurante/1",
+							"host": [
+								"{{url_api}}restaurante"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cardápio",
+			"item": [
+				{
+					"name": "listar_cardápios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_api}}cardapio",
+							"host": [
+								"{{url_api}}cardapio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar_cardápio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Meu Cardápio - 1\",\r\n    \"descricao\":\"Comidas Típicas do Tocantins\",\r\n    \"restaurante_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}cardapio",
+							"host": [
+								"{{url_api}}cardapio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar_cardápio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Meu Cardápio - 2\",\r\n    \"descricao\":\"Comidas Típicas do Tocantins\",\r\n    \"restaurante_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}cardapio/1",
+							"host": [
+								"{{url_api}}cardapio"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluir_cardápio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_api}}cardapio/1",
+							"host": [
+								"{{url_api}}cardapio"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar_cardápio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}cardapio/1",
+							"host": [
+								"{{url_api}}cardapio"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "produto",
+			"item": [
+				{
+					"name": "listar_produtos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_api}}produto",
+							"host": [
+								"{{url_api}}produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar_produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Tapioca com carne de sol\",\r\n    \"descricao\":\"Tapioca preparada na hora, Ingredientes: Carne, Cebola, Cheiro Verde\",\r\n    \"preco\":7.50,\r\n    \"cardapio_id\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}produto",
+							"host": [
+								"{{url_api}}produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar_produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\":\"Tapioca com carne de sol atualizado\",\r\n    \"descricao\":\"Tapioca preparada na hora, Ingredientes: Carne, Cebola, Cheiro Verde (atualizado)\",\r\n    \"preco\":4.01,\r\n    \"cardapio_id\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}produto/2",
+							"host": [
+								"{{url_api}}produto"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluir_produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_api}}produto/1",
+							"host": [
+								"{{url_api}}produto"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar_produto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}produto/1",
+							"host": [
+								"{{url_api}}produto"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
