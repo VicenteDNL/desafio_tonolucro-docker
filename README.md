@@ -52,6 +52,12 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
   composer install
 ```
 ```bash
+  cp .env.example .env
+```
+```bash
+  php artisan key:generate
+```
+```bash
   php artisan migrate
 ```
 
