@@ -12,9 +12,7 @@ services:
     networks:
       - desafio-tonolucro
   api:
-    build:
-      context: ./
-      dockerfile: api\Dockerfile
+    build: api\.
     image: desafio-tonolucro-api
     container_name: desafio-tonolucro-api
     volumes:
