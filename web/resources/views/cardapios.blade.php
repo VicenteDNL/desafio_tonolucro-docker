@@ -18,7 +18,7 @@
             </span>
         </div>
         <a href="{{route('restaurantes.index')}}" class="btn  btn-sm btn-info text-black-50 my-2"><i class="fas fa-arrow-circle-left"></i> Voltar para selecção de Restaurantes</a>
-        <div class="d-flex mb-3">
+        <div class="d-flex justify-content-center mb-3">
             {{$restaurante['descricao']}}
         </div>
         <div class="d-flex align-content-stretch flex-wrap">
