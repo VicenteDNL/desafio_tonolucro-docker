@@ -36,7 +36,6 @@ class CardapioController extends Controller
         $cardapios =$result['data']['cardapios'];
 
 
-
         return view('cardapios',compact('cardapios','restaurante'));
     }
 

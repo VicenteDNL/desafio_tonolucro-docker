@@ -5,7 +5,9 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CardapioRequest;
 use App\Models\Cardapio;
+use App\Models\Restaurante;
 use App\Traits\ApiResponse;
+use Illuminate\Support\Facades\DB;
 
 class CardapioController extends Controller
 {
@@ -14,7 +16,22 @@ class CardapioController extends Controller
 
     public function index()
     {
-        return $this->success(Cardapio::with('restaurante')->get());
+        if(auth('sanctum')->user()){
+            return $this->success(Cardapio::with('restaurante')->get());
+        }
+        $cardapios = Cardapio::where([
+            'ativo' => 1,])
+            ->whereIn('restaurante_id', function ($query) {
+                $query->select('restaurante_id')
+                    ->from('cardapios')
+                    ->join('restaurantes', function ($join) {
+                        $join->on('cardapios.restaurante_id', '=', 'restaurantes.id')
+                            ->where('restaurantes.ativo', 1);
+                    });
+            })
+            ->with('restaurante')
+            ->get();
+        return $this->success($cardapios);
     }
 
     public function store(CardapioRequest $request)
@@ -32,8 +49,25 @@ class CardapioController extends Controller
 
     public function show($id)
     {
-        $cardapio= Cardapio::with('restaurante')->find($id);
-        if (!$cardapio){
+        if(auth('sanctum')->user()){
+            $cardapio= Cardapio::with('restaurante')->find($id);
+        }
+        else{
+            $cardapio = Cardapio::where([
+                'ativo' => 1,])
+                ->whereIn('restaurante_id', function ($query) use ($id) {
+                    $query->select('restaurante_id')
+                        ->from('cardapios')
+                        ->join('restaurantes', function ($join) {
+                            $join->on('cardapios.restaurante_id', '=', 'restaurantes.id')
+                                ->where('restaurantes.ativo', 1);
+                        })
+                        ->where('cardapios.id', $id);
+                })
+                ->with('restaurante')
+                ->get();
+        }
+        if(!$cardapio){
             return $this->error('Cardápio não encontrado',400);
         }
         return $this->success($cardapio);

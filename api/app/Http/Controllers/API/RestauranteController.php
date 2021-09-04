@@ -15,7 +15,10 @@ class RestauranteController extends Controller
 
     public function index()
     {
-        return $this->success(Restaurante::all());
+        if(auth('sanctum')->user()){
+            return $this->success(Restaurante::all());
+        }
+        return $this->success(Restaurante::firstWhere('ativo',1));
     }
 
     public function store(RestauranteRequest $request)
@@ -26,11 +29,25 @@ class RestauranteController extends Controller
 
     public function show($id)
     {
-        $restaurante= Restaurante::find($id);
+        if(auth('sanctum')->user()){
+            $restaurante= Restaurante::find($id);
+        }
+        else{
+            $restaurante= Restaurante::firstWhere(['id'=>$id,'ativo'=>1]);
+        }
+
         if (!$restaurante){
             return $this->error('Restaurante não encontrado',400);
         }
-        $cardapios = $restaurante->cardapios()->with('produtos')->get();
+
+        if(auth('sanctum')->user()){
+            $cardapios = $restaurante->cardapios()->with('produtos')->get();
+        }
+        else{
+            $cardapios = $restaurante->cardapios()->where('ativo', 1)->with(['produtos'=>function ($query){
+                $query->where('produtos.ativo', 1);
+            }])->get();
+        }
         return $this->success(['restaurante'=>$restaurante,'cardapios'=>$cardapios]);
     }
 
