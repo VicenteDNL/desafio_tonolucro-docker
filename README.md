@@ -132,7 +132,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                      |
 | :-------- | :------- | :----------------------------- |
-|           |          | **Não é requerido**. Token JWT |
+|           |          | **É requerido o Token apenas para exibir dados inativos** |
 
 #### Buscar restaurante:
 
@@ -142,7 +142,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Não é requerido**. Token JWT        |
+| `id`      | `string` | **É requerido o Token apenas para exibir dados inativos**        |
 
 
 #### Criar restaurante:
@@ -153,7 +153,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                       |
 | :-------- | :------- | :-------------------------------- |
-|     |  | **Requerido**. Token JWT |
+|     |  | **Requerido Token**  |
 
 ##### Body:
 ```bash
@@ -185,7 +185,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                       |
 | :-------- | :------- | :-------------------------------- |
-|   `id`   | `string` | **Requerido**. Token JWT |
+|   `id`   | `string` | **Requerido Token**  |
 
 ##### Body:
 ```bash
@@ -217,7 +217,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                |
 | :-------- | :------- | :----------------------  |
-|   `id`   | `string`  | **Requerido**. Token JWT |
+|   `id`   | `string`  | **Requerido Token**  |
 
 # 
 
@@ -231,7 +231,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                      |
 | :-------- | :------- | :----------------------------- |
-|           |          | **Não é requerido**. Token JWT |
+|           |          | **É requerido o Token apenas para exibir dados inativos**  |
 
 #### Buscar cardápio:
 
@@ -241,7 +241,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Não é requerido**. Token JWT         |
+| `id`      | `string` | **É requerido o Token apenas para exibir dados inativos**          |
 
 
 #### Criar cardápio:
@@ -252,7 +252,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                       |
 | :-------- | :------- | :-------------------------------- |
-|     |  | **Requerido**. Token JWT |
+|     |  | **Requerido Token**  |
 
 ##### Body:
 ```bash
@@ -276,7 +276,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                       |
 | :-------- | :------- | :-------------------------------- |
-|   `id`   | `string` | **Requerido**. Token JWT |
+|   `id`   | `string` | **Requerido Token** |
 
 ##### Body:
 ```bash
@@ -300,7 +300,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                |
 | :-------- | :------- | :----------------------  |
-|   `id`   | `string`  | **Requerido**. Token JWT |
+|   `id`   | `string`  | **Requerido Token**  |
 
 # 
 
@@ -314,7 +314,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                      |
 | :-------- | :------- | :----------------------------- |
-|           |          | **Não é requerido**. Token JWT |
+|           |          | **É requerido o Token apenas para exibir dados inativos**  |
 
 #### Buscar produto:
 
@@ -324,7 +324,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Não é requerido**. Token JWT         |
+| `id`      | `string` | **É requerido o Token apenas para exibir dados inativos**         |
 
 
 #### Criar produto:
@@ -335,7 +335,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                       |
 | :-------- | :------- | :-------------------------------- |
-|     |  | **Requerido**. Token JWT |
+|     |  | **Requerido Token** |
 
 ##### Body:
 ```bash
@@ -361,7 +361,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                       |
 | :-------- | :------- | :-------------------------------- |
-|   `id`   | `string` | **Requerido**. Token JWT |
+|   `id`   | `string` | **Requerido Token**  |
 
 ##### Body:
 ```bash
@@ -387,7 +387,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
 
 | Parametro | Tipo     | Descrição                |
 | :-------- | :------- | :----------------------  |
-|   `id`   | `string`  | **Requerido**. Token JWT |
+|   `id`   | `string`  | **Requerido Token**  |
 
 
   
