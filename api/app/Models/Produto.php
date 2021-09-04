@@ -14,6 +14,7 @@ class Produto extends Model
         'descricao',
         'cardapio_id',
         'preco',
+        'ativo'
 
     ];
 

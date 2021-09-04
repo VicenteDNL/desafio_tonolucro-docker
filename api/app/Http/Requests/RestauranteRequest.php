@@ -32,6 +32,7 @@ class RestauranteRequest extends FormRequest
             'cep'       => 'string|size:8',
             'cidade'    => 'string|max:255',
             'estado'    => 'string|size:2',
+            'ativo'     => 'boolean',
         ];
     }
 
@@ -53,6 +54,7 @@ class RestauranteRequest extends FormRequest
             'cidade.max'         =>'O campo cidade excedeu o tamanho máximo',
             'estado.string'      =>'O campo estado deve ser texto',
             'estado.size'        =>'O campo estado deve conter 2 caracteres',
+            'ativo.boolean'      =>'O campo ativo dever ser boleano',
         ];
     }
 }

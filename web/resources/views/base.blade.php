@@ -14,8 +14,8 @@
     <h2 class="text-white"><i class="fas fa-utensils"></i> Desafio Tonolucro <i class="fas fa-utensils"></i></h2>
     <h5 class="text-white">by: Danilo Saraiva Vicente</h5>
     <div>
-        <a href="https://github.com/VicenteDNL/desafio-tonolucro" target="_blank" class="btn btn-sm btn-light">Repositório</a>
-        <button type="button" class="btn btn-sm btn-light">Colections API (postman)</button>
+        <a href="https://github.com/VicenteDNL/desafio_tonolucro-docker" target="_blank" class="btn btn-sm btn-light">Repositório</a>
+        <a href="https://github.com/VicenteDNL/desafio_tonolucro-docker/tree/main/colllection_postman" class="btn btn-sm btn-light">Colections API (postman)</a>
     </div>
 </div>
 <div class="p-5 d-flex align-items-center " style="height: 100%;">

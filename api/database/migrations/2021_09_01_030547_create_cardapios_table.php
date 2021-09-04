@@ -18,6 +18,7 @@ class CreateCardapiosTable extends Migration
             $table->string('nome');
             $table->text('descricao');
             $table->foreignId('restaurante_id')->constrained()->onDelete('cascade');
+            $table->boolean('ativo')->default(false);
             $table->timestamps();
         });
     }

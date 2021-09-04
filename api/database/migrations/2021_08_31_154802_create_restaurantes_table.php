@@ -22,6 +22,7 @@ class CreateRestaurantesTable extends Migration
             $table->char('cep',8)->nullable();
             $table->string('cidade')->nullable();
             $table->char('estado',2)->nullable();
+            $table->boolean('ativo')->default(false);
             $table->timestamps();
         });
     }

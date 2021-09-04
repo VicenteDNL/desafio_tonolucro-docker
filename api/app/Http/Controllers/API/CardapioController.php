@@ -19,6 +19,13 @@ class CardapioController extends Controller
 
     public function store(CardapioRequest $request)
     {
+        $ativo = $request->get('ativo');
+        if( !is_null($ativo) && $ativo==true ){
+            if(Cardapio::where(['ativo'=> 1, 'restaurante_id'=>$request->get('restaurante_id')])->count()>=3){
+                return $this->error('Número de cadapios ativos excedido',200);
+            }
+        }
+
         $cardapio= Cardapio::create($request->all());
         return $this->success($cardapio,'Cardápio cadastrado',201);
     }
@@ -38,6 +45,20 @@ class CardapioController extends Controller
         if (!$cardapio){
             return $this->error('Cardápio não encontrado',400);
         }
+
+        $idRestauranteRequest = $request->get('restaurante_id');
+
+        $idCardapio = (!is_null($idRestauranteRequest) && $idRestauranteRequest!=$cardapio->restaurante_id)
+            ? $request->get('restaurante_id')
+            : $cardapio->restaurante_id;
+
+        $qntdAtivos = Cardapio::where(['ativo'=> 1, 'restaurante_id'=>$idCardapio])->count();
+
+        $ativo = $request->get('ativo');
+        if(!is_null($ativo) && $ativo==true && $qntdAtivos>=3){
+            return $this->error('Número de cardápios ativos excedido',200);
+        }
+
         $cardapio->update($request->all());
         return $this->success($cardapio,'Cardápio atualizado');
     }

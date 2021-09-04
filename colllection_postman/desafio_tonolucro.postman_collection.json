@@ -150,7 +150,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\":\"Meu Restaurante -1\",\r\n    \"descricao\":\"O melhor da Tocantins\",\r\n  \r\n    \"endereco\": \"Rua da Imaginação Nº 001\",\r\n    \"cep\": \"77000000\",\r\n    \"cidade\": \"Palmas\",\r\n    \"estado\": \"TO\"\r\n\r\n}",
+							"raw": "{\r\n    \"nome\":\"Meu Restaurante\",\r\n    \"descricao\":\"O melhor da Tocantins\",\r\n    \"telefone\": \"55555555555\",\r\n    \"endereco\": \"Rua da Imaginação Nº 001\",\r\n    \"cep\": \"77000000\",\r\n    \"cidade\": \"Palmas\",\r\n    \"estado\": \"TO\",\r\n    \"ativo\":true\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -189,7 +189,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\":\"Meu Restaurante\",\r\n    \"descricao\":\"O melhor do Mundo\",\r\n    \"telefone\": \"55555555555\",\r\n    \"endereco\": \"Rua da Imaginação Nº 001\",\r\n    \"cep\": \"77400000\",\r\n    \"cidade\": \"Palmas\",\r\n    \"estado\": \"TO\"\r\n}",
+							"raw": "{\r\n    \"nome\":\"Meu Restaurante\",\r\n    \"descricao\":\"O melhor do Mundo\",\r\n    \"telefone\": \"55555555555\",\r\n    \"endereco\": \"Rua da Imaginação Nº 001\",\r\n    \"cep\": \"77400000\",\r\n    \"cidade\": \"Palmas\",\r\n    \"estado\": \"TO\",\r\n    \"ativo\":true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -306,7 +306,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\":\"Meu Cardápio - 1\",\r\n    \"descricao\":\"Comidas Típicas do Tocantins\",\r\n    \"restaurante_id\": 2\r\n}",
+							"raw": "{\r\n    \"nome\":\"Meu Cardápio\",\r\n    \"descricao\":\"Comidas Típicas do Tocantins\",\r\n    \"restaurante_id\": 1,\r\n    \"ativo\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -345,7 +345,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\":\"Meu Cardápio - 2\",\r\n    \"descricao\":\"Comidas Típicas do Tocantins\",\r\n    \"restaurante_id\": 1\r\n}",
+							"raw": "{\r\n    \"nome\":\"Meu Cardápio\",\r\n    \"descricao\":\"Comidas Típicas do Tocantins\",\r\n    \"restaurante_id\": 1,\r\n    \"ativo\":true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -353,12 +353,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url_api}}cardapio/1",
+							"raw": "{{url_api}}cardapio/9",
 							"host": [
 								"{{url_api}}cardapio"
 							],
 							"path": [
-								"1"
+								"9"
 							]
 						}
 					},
@@ -462,7 +462,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\":\"Tapioca com carne de sol\",\r\n    \"descricao\":\"Tapioca preparada na hora, Ingredientes: Carne, Cebola, Cheiro Verde\",\r\n    \"preco\":7.50,\r\n    \"cardapio_id\": 4\r\n}",
+							"raw": "{\r\n    \"nome\":\"Tapioca com carne de sol 13\",\r\n    \"descricao\":\"Tapioca preparada na hora, Ingredientes: Carne, Cebola, Cheiro Verde\",\r\n    \"preco\":7.50,\r\n    \"cardapio_id\": 9,\r\n    \"ativo\":true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -501,7 +501,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"nome\":\"Tapioca com carne de sol atualizado\",\r\n    \"descricao\":\"Tapioca preparada na hora, Ingredientes: Carne, Cebola, Cheiro Verde (atualizado)\",\r\n    \"preco\":4.01,\r\n    \"cardapio_id\": 4\r\n}",
+							"raw": "{\r\n    \"nome\":\"Tapioca com carne de sol atualizado\",\r\n    \"descricao\":\"Tapioca preparada na hora, Ingredientes: Carne, Cebola, Cheiro Verde (atualizado)\",\r\n    \"preco\":4.01,\r\n    \"cardapio_id\": 4,\r\n    \"ativo\":true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -509,12 +509,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url_api}}produto/2",
+							"raw": "{{url_api}}produto/4",
 							"host": [
 								"{{url_api}}produto"
 							],
 							"path": [
-								"2"
+								"4"
 							]
 						}
 					},

@@ -28,19 +28,21 @@ class CardapioRequest extends FormRequest
             'nome'           => $obrigatorio.'string|max:255',
             'descricao'      => $obrigatorio.'string',
             'restaurante_id' => $obrigatorio.'exists:App\Models\Restaurante,id',
+            'ativo'     => 'boolean',
         ];
     }
 
     public function  messages()
     {
         return [
-            'nome.required'         =>'O campo nome é obrigatório',
-            'nome.string'           =>'O campo nome deve ser texto',
-            'nome.max'              =>'O campo nome excedeu o tamanho máximo',
-            'descricao.required'    =>'O campo descricao é obrigatório',
-            'descricao.string'      =>'O campo descricao deve ser texto',
-            'restaurante_id.exists' =>'Restaurante não encontrado',
-            'restaurante_id.required'    =>'O campo restaurante é obrigatório',
+            'nome.required'           =>'O campo nome é obrigatório',
+            'nome.string'             =>'O campo nome deve ser texto',
+            'nome.max'                =>'O campo nome excedeu o tamanho máximo',
+            'descricao.required'      =>'O campo descricao é obrigatório',
+            'descricao.string'        =>'O campo descricao deve ser texto',
+            'restaurante_id.exists'   =>'Restaurante não encontrado',
+            'restaurante_id.required' =>'O campo restaurante é obrigatório',
+            'ativo.boolean'           =>'O campo ativo dever ser boleano',
 
         ];
     }

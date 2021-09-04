@@ -17,6 +17,7 @@ class Restaurante extends Model
         'cep',
         'cidade',
         'estado',
+        'ativo'
     ];
 
     public function cardapios()

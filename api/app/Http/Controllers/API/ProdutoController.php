@@ -19,6 +19,12 @@ class ProdutoController extends Controller
 
     public function store(ProdutoRequest $request)
     {
+        $ativo = $request->get('ativo');
+        if( !is_null($ativo) && $ativo==true ){
+            if(Produto::where(['ativo'=> 1, 'cardapio_id'=>$request->get('cardapio_id')])->count()>=10){
+                return $this->error('Número de produto ativos excedido',200);
+            }
+        }
         $produto= Produto::create($request->all());
         return $this->success($produto,'Produto cadastrado',201);
     }
@@ -38,6 +44,20 @@ class ProdutoController extends Controller
         if (!$produto){
             return $this->error('Produto não encontrado',400);
         }
+
+        $idCardapioRequest = $request->get('cardapio_id');
+        #verifica sê está alterando o produto de cardápio
+        $idCardapio = (!is_null($idCardapioRequest) && $idCardapioRequest!=$produto->cardapio_id)
+             ? $idCardapioRequest
+             : $produto->cardapio_id;
+
+        $qntdAtivos = Produto::where(['ativo'=> 1, 'cardapio_id'=>$idCardapio])->count();
+
+        $ativo = $request->get('ativo');
+        if(!is_null($ativo) && $ativo==true && $qntdAtivos>=10){
+            return $this->error('Número de produtos ativos excedido',200);
+        }
+
         $produto->update($request->all());
         return $this->success($produto,'Produto atualizado');
     }

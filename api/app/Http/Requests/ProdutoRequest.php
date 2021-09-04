@@ -29,6 +29,7 @@ class ProdutoRequest extends FormRequest
             'descricao'   => $obrigatorio.'string',
             'cardapio_id' => $obrigatorio.'exists:App\Models\Cardapio,id',
             'preco'     => 'numeric',
+            'ativo'     => 'boolean',
         ];
     }
 
@@ -42,7 +43,8 @@ class ProdutoRequest extends FormRequest
             'descricao.string'     =>'O campo descricao deve ser texto',
             'cardapio_id.exists'   =>'Cardápio não encontrado',
             'cardapio_id.required' =>'O campo cardapio é obrigatório',
-            'preco.numeric'        =>'O campo preco deve ser numerico'
+            'preco.numeric'        =>'O campo preco deve ser numerico',
+            'ativo.boolean'        =>'O campo ativo dever ser boleano',
 
         ];
     }

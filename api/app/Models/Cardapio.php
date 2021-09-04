@@ -13,6 +13,7 @@ class Cardapio extends Model
         'nome',
         'descricao',
         'restaurante_id',
+        'ativo'
     ];
 
     public function restaurante()

@@ -19,6 +19,7 @@ class CreateProdutosTable extends Migration
             $table->text('descricao');
             $table->float('preco', 8, 2)->default(0.00);
             $table->foreignId('cardapio_id')->constrained()->onDelete('cascade');
+            $table->boolean('ativo')->default(false);
             $table->timestamps();
         });
     }
