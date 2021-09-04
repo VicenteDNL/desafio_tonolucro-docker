@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\WEB;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class CardapioController extends Controller
 {
@@ -19,17 +18,17 @@ class CardapioController extends Controller
         $result = curl_exec($ch); // Execute a instrução cURL
 
         if (curl_error($ch)) {
-            $error_msg = curl_error($ch);
+            return view('erro');
         }
         curl_close($ch); // Feche a conexão cURL
         $result= json_decode($result, true);
 
         if($result==null){
-            var_dump('error');exit();
+            return view('erro');
         }
 
         if(!$result['success']){
-            var_dump('error');exit();
+            return view('erro');
         }
 
         $restaurante =$result['data']['restaurante'];

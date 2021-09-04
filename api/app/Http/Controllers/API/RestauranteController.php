@@ -18,7 +18,7 @@ class RestauranteController extends Controller
         if(auth('sanctum')->user()){
             return $this->success(Restaurante::all());
         }
-        return $this->success(Restaurante::firstWhere('ativo',1));
+        return $this->success(Restaurante::where('ativo',1)->get());
     }
 
     public function store(RestauranteRequest $request)
