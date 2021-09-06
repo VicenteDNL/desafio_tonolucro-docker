@@ -49,7 +49,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
   docker container exec -it desafio-tonolucro-api /bin/sh
 ```
 ```bash
-  composer install
+  composer install --no-dev
 ```
 ```bash
   cp .env.example .env
@@ -66,7 +66,7 @@ As soluções deverão ser acessíveis para o host nas seguintes portas:
   docker container exec -it desafio-tonolucro-web /bin/sh
 ```
 ```bash
-  composer install
+  composer install --no-dev
 ```
 ```bash
   cp .env.example .env
