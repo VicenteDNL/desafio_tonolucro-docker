@@ -17,8 +17,6 @@ services:
     container_name: desafio-tonolucro-api
     volumes:
       - ./api:/var/www/api
-    # command: >
-    #   sh -c 'composer install && php artisan migrate'
 
     networks:
       - desafio-tonolucro
@@ -28,8 +26,6 @@ services:
     container_name: desafio-tonolucro-web
     volumes:
       - ./web:/var/www/web
-    # command: >
-    #   sh -c 'composer install && php artisan migrate'
 
     networks:
       - desafio-tonolucro

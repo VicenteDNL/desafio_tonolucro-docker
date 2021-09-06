@@ -110,6 +110,16 @@
 				{
 					"name": "listar_restaurantes",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -197,12 +207,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url_api}}restaurante/3",
+							"raw": "{{url_api}}restaurante/2",
 							"host": [
 								"{{url_api}}restaurante"
 							],
 							"path": [
-								"3"
+								"2"
 							]
 						}
 					},
@@ -244,15 +254,25 @@
 				{
 					"name": "buscar_restaurante",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url_api}}restaurante/1",
+							"raw": "{{url_api}}restaurante/2",
 							"host": [
 								"{{url_api}}restaurante"
 							],
 							"path": [
-								"1"
+								"2"
 							]
 						}
 					},
@@ -403,12 +423,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url_api}}cardapio/1",
+							"raw": "{{url_api}}cardapio/9",
 							"host": [
 								"{{url_api}}cardapio"
 							],
 							"path": [
-								"1"
+								"9"
 							]
 						}
 					},
@@ -501,7 +521,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\":\"Tapioca com carne de sol atualizado\",\r\n    \"descricao\":\"Tapioca preparada na hora, Ingredientes: Carne, Cebola, Cheiro Verde (atualizado)\",\r\n    \"preco\":4.01,\r\n    \"cardapio_id\": 4,\r\n    \"ativo\":true\r\n}",
+							"raw": "{\r\n    \"nome\":\"Tapioca com carne de sol atualizado\",\r\n    \"descricao\":\"Tapioca preparada na hora, Ingredientes: Carne, Cebola, Cheiro Verde (atualizado)\",\r\n    \"preco\":4.01,\r\n    \"cardapio_id\": 4,\r\n    \"ativo\":false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -509,12 +529,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url_api}}produto/4",
+							"raw": "{{url_api}}produto/13",
 							"host": [
 								"{{url_api}}produto"
 							],
 							"path": [
-								"4"
+								"13"
 							]
 						}
 					},
@@ -556,15 +576,25 @@
 				{
 					"name": "buscar_produto",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url_api}}produto/1",
+							"raw": "{{url_api}}produto/13",
 							"host": [
 								"{{url_api}}produto"
 							],
 							"path": [
-								"1"
+								"13"
 							]
 						}
 					},
